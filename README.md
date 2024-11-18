@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Idbook Hotels - Login and Signup Flow with Role-Based Access Control (RBAC)
 
-## Getting Started
+## Overview
+This project aims to develop a user authentication flow inspired by the Idbook Hotels theme, incorporating role-based access control (RBAC) to manage user access across different pages. The application includes features for both login and signup, with enhanced user validation and error handling.
 
-First, run the development server:
+## Key Features
+1. **User Authentication System**:
+   - Functional login and signup pages.
+   - Input validation for both client-side and server-side.
+   - Error handling to display appropriate messages for validation failures and API errors.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Role-Based Access Control (RBAC)**:
+   - Definition of user roles (e.g., `admin`, `user`).
+   - UI adjustments based on role, with admin capabilities to switch between roles.
+   - Restricted access to specific pages based on user role.
+   - Redirection of unauthorized users to an error page.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
+The application will be structured with a clear separation of concerns:
+- **Authentication Module**: Handles login and signup logic.
+- **RBAC Module**: Manages user roles and access control.
+- **Error Handling**: Displays relevant error messages for both client-side and server-side issues.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Requirements and Implementation Details
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Login Page
+- **Input Fields**:
+  - Email
+  - Password
+- **Validation**:
+  - Ensure the email is in a valid format.
+  - Password must meet a minimum length requirement.
+- **Error Handling**:
+  - Display client-side validation messages (e.g., invalid email format).
+  - Display API errors received from the backend.
 
-## Learn More
+### 2. Signup Page
+- **Input Fields**:
+  - Name
+  - Email
+  - Password
+  - Confirm Password
+- **Validation**:
+  - All fields are required.
+  - Ensure the password and confirm password fields match.
+  - Password should comply with strong password criteria (e.g., minimum length, inclusion of special characters).
+- **Error Handling**:
+  - Client-side validation errors.
+  - API error handling to manage backend responses.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Role-Based Pages
+- **Role Definitions**:
+  - `admin`
+  - `user`
+- **Admin Capabilities**:
+  - Ability to switch between admin and user roles.
+  - Dynamic UI and navigation changes based on role.
+- **Access Restrictions**:
+  - Pages restricted by user role.
+  - Unauthorized users redirected to a custom error page.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deliverables
+1. **Functional Login and Signup Flow**:
+   - Fully working login and signup pages with validation and error handling.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Client-Side RBAC Implementation**:
+   - Role-based access control to manage user navigation and access.
 
-## Deploy on Vercel
+3. **Error Pages**:
+   - Custom error page for unauthorized access.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Run
+1. Clone the repository.
+2. Install dependencies with `npm install` or `yarn`.
+3. Run the application using `npm run dev` or `yarn run start`.
+4. Access the application at `http://localhost:3000`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Future Enhancements
+- Integration with a backend for persistent role and session management.
+- Implementation of password recovery functionality.
+- Enhancing security measures such as two-factor authentication (2FA).
+
+## License
+This project is licensed under the MIT License.
+
+---
+Thank you for reviewing the project details. For any issues or questions, please refer to the project documentation or contact the development team.
