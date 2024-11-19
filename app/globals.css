@@ -1,21 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --radius: 0.5rem
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+.baseContainer {
+  @apply max-w-[1200px] ps-[10px] pe-[10px] max-lg:ps-[50px] max-lg:pe-[50px]  max-sm:ps-[10px] max-sm:pe-[10px] m-auto
 }
